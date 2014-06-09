@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<title>Admin login</title>
+	{{#if prod_env}}
+    	<link type="text/css" rel="stylesheet" href="/css/style.min.css"/>
+   	{{else}}
+      <link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+      <link type="text/css" rel="stylesheet" href="/assets/css/style.css"/>
+    {{/if}}
+    {{{block "pageStyles"}}}
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span4"></div>
+			<div class="span4 ">
+				<div class="container-fluid m-login-container">
+					<div class="page-header">
+						<h2>Gin  <small>Login</small></h2>
+					</div>
+
+					<form class="form-horizontal" action="" method="post">
+						<input type="text" name="username" placeholder="Enter username or email" class="span12" id="input01">
+						<label></label>
+						<input type="password" name="password" placeholder="Enter password" class="span12" id="input01">
+
+			            <button type="submit" style="margin-top: 15px" class="btn btn-primary">	Login</button>
+						
+					</form>
+				</div>			
+			</div>
+			<div class="span4"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="imood-well">
+			<a ng-repeat="tag in arrTag" ng-click="showMoodByTag()" href="/tag/{{tag.name | slug}}" style="color:{{tag.color}}; background-color: {{tag.bgColor}}">#{{tag.name}}</a>
+
+			<a href="javascript://" class="imood-expand"><span class="glyphicon glyphicon-chevron-down"></span></a>
+		</div>
+	</div>
+</div>

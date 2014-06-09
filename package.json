@@ -1,0 +1,33 @@
+{
+    "name": "lolguide"
+  , "version": "0.0.1"
+  , "private": true
+  , "repository": {
+    "type": "git",
+    "url": "https://github.com/vntrace/guide.git"
+  }
+  , "scripts": {
+      "start": "node app"
+  }
+  , "dependencies": {
+      "express": "4.2.0"
+    , "express-hbs": "0.7.9"
+    , "express-session": "~1.2.0"
+    , "redis": "0.10.2"
+    , "connect-redis": "~2.0.0"
+    , "mongoose": "3.8.9"
+    , "mongoose-error-helper": "*"
+    , "when": "3.2.0"
+    , "static-favicon": "~1.0.0"
+    , "cookie-parser": "~1.0.1"
+    , "body-parser": "~1.0.0"
+    , "connect-flash": "0.1.1"
+    , "passport": "0.2.0"
+    , "passport-local": "1.0.0"
+    , "morgan": "~1.0.0"
+    , "gm": "1.16.0"
+    , "multiparty": "~3.2.6"
+    , "underscore": "~1.6.0"
+    , "passport-http-bearer": "1.0.1"
+  }
+}

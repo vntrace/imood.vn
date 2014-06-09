@@ -1,0 +1,148 @@
+{{!< default}}
+<section>
+	<div class="row-fluid">
+		{{#if error}}
+		<div class="span12">
+			<div class="alert alert-error">
+				<button class="close" data-dismiss="alert">x</button>
+				<strong>Lỗi rồi!</strong> {{{join error '<br/>' }}}
+			</div>
+		</div>
+		{{/if}}
+	</div>
+	<form class="form-horizontal" action="" method="post">
+		<fieldset>
+			<div class="row-fluid">
+				<div class="span7">
+					<legend>Thêm trang bị mới</legend>
+					<div class="control-group">
+						<label class="control-label">Tên trang bị</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" name="name">
+							<p class="help-block">Tối đa 50 ký tự</p>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">Chọn ảnh</label>
+						<div class="controls">
+							<input type="file" name="item_thumb" id="item_thumb"/>
+							<input type="hidden" name="image_url" />
+							<br/>
+							<a href="#" class="upload_result">
+							</a>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Tổng giá</label>
+						<div class="controls">
+							<input type="text" value="0" class="input-small" name="total_price">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">Giá công thức</label>
+						<div class="controls">
+							<input type="text" value="0" class="input-small" name="recipe_price">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">Mô tả</label>
+						<div class="controls">
+							<textarea id="description" class="editor" name="description"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="span5">
+					<legend>Thêm nhánh trang bị</legend>
+					<ul class="item-recipe-list">
+						<li>
+							<img width="40" height="40" src="/static/lol/items/ao-choang-am-anh_1387428416.gif">
+						</li>
+						<li>
+							<a data-toggle="modal" href="#myModal" href="#"><img width="40" height="40" src="/assets/img/ico/ico-add.gif"></a>
+						</li>
+					</ul>
+					<legend>Trang bị nâng cấp</legend>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+		          	<div class="form-actions">
+			            <button type="submit" class="btn btn-primary">Save changes</button>
+			            <button class="btn">Cancel</button>
+		          	</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</section>
+
+<section id="m-modal">
+	<div class="modal hide" id="myModal">
+		<div class="modal-header">
+	    	<button type="button" class="close" data-dismiss="modal">x</button>
+	    	<h3>Danh sách trang bị</h3>
+		</div>
+		<div class="modal-body">
+	    	<form class="form-horizontal">
+	    		<div class="control-group">
+					<label class="control-label" for="input01">Nhập tên trang bị</label>
+					<div class="controls">
+						<input type="text" class="input-xlarge" id="btn-search-item">
+					</div>
+				</div>
+	    	</form>
+	    	<div class="well" style="display: none">
+	    		<ul class="" id="selected-item">
+	    			
+	    		</ul>
+	    	</div>
+	    	<ul class="hide-list-item">
+	    		{{#each items}}
+	    			<li class="recipe-item" data-name="{{name}}" data-image-url="{{image_url}}" data-alias="{{alias}}" data-json="{{toString recipe}}">
+	    				<a href="#">
+	    					<img width="40" height="40" src="{{../static_path}}/lol/items/{{image_url}}">
+	    				</a>
+	    			</li>
+	    		{{/each}}
+	    	</ul>
+	 	</div>
+	</div>
+</section>
+
+{{#contentFor "customScript"}}
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#item_thumb').fileupload({
+			url: '/upload',
+			done: function(e, data) {
+				if(!data.result.status) {
+					return alert('Upload failed !');
+				}
+
+				$('input[name=image_url]').val(data.result.fileName[0]);
+				$('.upload_result').html($('<img/>').attr('src', '/static/lol/items/' + data.result.fileName[0]));
+			}
+		});
+
+		$('#btn-search-item').bind('keyup', function(){
+			var _s = $(this).val().toLowerCase();
+			$('.hide-list-item li').hide();
+			$('.hide-list-item li').filter(function(){
+				return $(this).data('name').toLowerCase().indexOf(_s) !== -1;
+			}).show();
+		});
+
+		$('.recipe-item').bind('click', function(e){
+			e.preventDefault();
+			$(this).clone().appendTo('#selected-item');
+
+			if($('#selected-item').find('li').length > 0) {
+				$('#selected-item').parent().show();
+			}
+		});
+	});
+</script>
+{{/contentFor}}

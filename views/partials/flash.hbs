@@ -1,0 +1,38 @@
+<div class="row-fluid flash-section">
+	{{#if flash.flash_warning}}
+	<div class="alert alert-warning">
+		<button class="close" data-dismiss="alert">x</button>
+		<strong>Warning!</strong> You have 4 Renewals due today
+		<a href="#">
+			<span class="label label-important">Read it!</span>	
+		</a>
+	</div>
+	{{/if}}
+
+	{{#if flash.flash_error}}
+	<div class="alert alert-error">
+		<button class="close" data-dismiss="alert">x</button>
+		<strong>Lỗi rồi!</strong> {{{join flash.error '<br/>' }}}
+	</div>
+	{{/if}}
+
+	{{#if flash.flash_info}}
+	<div class="alert alert-info">
+		<button class="close" data-dismiss="alert">x</button>
+		<strong>Warning!</strong> You have 4 Renewals due today
+		<a href="#">
+			<span class="label label-important">Read it!</span>	
+		</a>
+	</div>
+	{{/if}}
+
+	{{#if flash.flash_success}}
+	<div class="alert alert-success">
+		<button class="close" data-dismiss="alert">x</button>
+		<strong>Warning!</strong> You have 4 Renewals due today
+		<a href="#">
+			<span class="label label-important">Read it!</span>	
+		</a>
+	</div>
+	{{/if}}
+</div>

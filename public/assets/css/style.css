@@ -1,0 +1,288 @@
+body {
+	background: url(../img/bg.jpg) !important;
+	padding: 40px 0;
+	color: #463C3C;
+}
+
+.unstyled {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.bg-color-1 {
+	background-color: #E35736 !important;
+}
+
+.bg-color-2 {
+	background-color: #BFAB54 !important;
+}
+
+.bg-color-3 {
+	background-color: #F9E0A0 !important;
+}
+
+.bg-color-4 {
+	background-color: #9D0193 !important;
+}
+
+.bg-color-5 {
+	background-color: #FF6B04 !important;
+}
+
+.bg-color-6 {
+	background-color: #613915 !important;
+}
+
+.bg-color-7 {
+	background-color: #405161 !important;
+}
+
+.bg-color-8 {
+	background-color: #C9D2EF !important;
+}
+
+.imood-logo {
+	width: 320px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.form-search {
+	width: 522px;
+	margin: 20px auto;
+	height: 60px;
+	/*background-color: #FFF;*/
+	/*padding: 10px;*/
+	border: 10px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-search input {
+	height: 40px;
+	padding: 10px;
+	border: none;
+	outline: none;
+}
+
+.mood-choices {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 100%;
+	display: block;
+	background-color: #FFF;
+	cursor: text;
+}
+
+.mood-choices.focus {
+	opacity: 0.9;
+}
+
+.mood-choices li {
+	float: left;
+}
+
+.mood-selected {
+	margin-right: 1px;
+}
+
+.mood-selected a {
+	height: 40px;
+	display: inline-block;
+	line-height: 40px;
+	padding: 0 5px 0 10px;
+	background-color: #5E340A;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.mood-selected a span {
+	padding: 0 5px;
+	color: #FFF;
+}
+
+.mood-selected a span:hover {
+	background-color: #FFF;
+	color: #5E340A;
+}
+
+.imood-well {
+	background-color: #D9A615;
+	padding: 10px 10px 40px 10px;
+	float: left;
+	position: relative;
+}
+
+.imood-well a {
+	padding: 5px 15px;
+	background-color: #5E340A;
+	font-size: 14pt;
+	color: #FFF;
+	opacity: 0.7;
+	float: left;
+	margin-bottom: 5px;
+	margin-right: 5px;
+}
+
+.imood-well a:hover {
+	opacity: 1;
+}
+
+.imood-well .imood-expand {
+	position: absolute;
+	height: auto;
+	font-size: 12px;
+	bottom: 0;
+	left: 50%;
+}
+
+.header {
+	border-bottom: 1px solid #463C3C;
+	color: #463C3C;
+}
+
+.imood-list li {
+	display: block;
+	height: 90px;
+	margin-bottom: 10px;
+}
+
+.imood-list li a.thumb {
+	float: left;
+	display: inline-block;
+	height: 90px;
+	width: 90px;
+	background-color: #5E340A;
+}
+
+.imood-list li a.thumb img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.imood-list li .content {
+	padding-left: 100px;
+}
+
+.imood-list li .content .title {
+	font-weight: bold;
+	color: #FFF;
+}
+
+.imood-list li .content.youtube {
+	background-image: url(../img/youtube.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.imood-list li .content.mp3 {
+	background-image: url(../img/mp3.jpg);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.imood-list li .content.soundcloud {
+	background-image: url(../img/soundcloud.jpg);
+	background-repeat: no-repeat;
+	background-position: right;	
+}
+
+.imood-list li .content p {
+	margin: 3px 0;
+	padding: 0;
+	height: 20px;
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+span.mood-tag {
+	background-color: #5E340A;
+	color: #FFF;
+	padding: 3px 10px;
+}
+
+#footer {
+	height: 200px;
+}
+
+.imood-social {
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.imood-social a img {
+	width: 48px;
+	height: 48px;
+}
+
+#footer .imood-logo img {
+	width: 150px;
+}
+
+input,
+textarea {
+	border-radius: 0 !important;
+	border: none !important;
+}
+
+.btn {
+	border-radius: 0;
+	border: none;
+}
+
+.list-tag-holder {
+	background-color: #D9A615;
+	float: left;
+	padding: 10px;
+}
+
+.list-tag-holder a {
+	background-color: #5E350A;
+	padding: 5px 10px;
+	color: #FFF;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	float: left;
+}
+
+.list-tag-holder a.active {
+	background-color: #E35736;
+}
+
+#footer hr {
+	border-top: 1px solid #463C3C;
+}
+
+.imood-profile {
+	width: 280px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.imood-profile a {
+	color: #463C3C;
+}
+
+/*iMood modal - Override bootstrap modal*/
+.modal-content {
+	border-radius: 0;
+}
+
+.imood-modal-logo,
+.imood-modal-title {
+	text-align: center;
+}
+
+.form.login input {
+	background-color: #FAFFBD;
+}
+
+.has-error .form-control {
+	border-right: 2px solid #a94442 !important;
+}

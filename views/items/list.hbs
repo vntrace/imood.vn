@@ -1,0 +1,29 @@
+{{!< default}}
+
+<section>
+	<div class="page-header">
+		<h1>Danh sách trang bị</h1>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span12">
+			<ul class="lol-db">
+				<li class="item">
+					<a href="/items/add">
+						<img src="/assets/img/ico/ico-add.gif">
+						<span class="item-name">Thêm mới</span>
+					</a>
+				</li>
+				{{#each items}}
+					<li class="item">
+						<a href="#">
+							<img src="{{../static_path}}/lol/items/{{image_url}}">
+							<span class="item-name">{{name}}</span>
+							<span>{{total_price}} <img src="{{../static_path}}/lol/bp.png"></span>
+						</a>
+					</li>
+			    {{/each}}
+			</ul>
+		</div>
+	</div>
+</section>

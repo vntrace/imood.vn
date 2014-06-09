@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div ng-controller="UserController" class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="imood-modal-logo"><img src="/assets/img/logo.png" alt="iMood.vn"/></h4>
+        <h4 class="imood-modal-title">Đăng nhập</h4>
+      </div>
+      <div class="modal-body">
+        <form name="loginForm" class="form login" action="" method="post" novalidate>
+            <div class="form-group" ng-class="{'has-error has-feedback':!loginForm.email.$valid}">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" ng-model="user.email" name="email" placeholder="Nhập địa chỉ email của bạn" class="form-control" required>
+                <span ng-show="!loginForm.email.$valid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <div class="form-group" ng-class="{'has-error has-feedback':!loginForm.password.$valid}">
+                <label for="exampleInputEmail1">Password</label>
+                <input type="password" ng-model="user.password" name="password" placeholder="Nhập mật khẩu" class="form-control" required>
+                <span ng-show="!loginForm.password.$valid" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+            <button type="submit" ng-click="loginForm.$valid && login()" class="btn btn-primary">Đăng nhập</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

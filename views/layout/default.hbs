@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="imood">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{{title}}</title>
+    {{#if prod_env}}
+    	<link type="text/css" rel="stylesheet" href="/css/style.min.css"/>
+   	{{else}}
+    	<link type="text/css" rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+      <link type="text/css" rel="stylesheet" href="/assets/css/style.css"/>
+      <link type="text/css" rel="stylesheet" href="/bower_components/nprogress/nprogress.css"/>
+    {{/if}}
+    <script type="text/javascript" src="/bower_components/angular-latest/build/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-latest/build/angular-route.js"></script>
+    <script type="text/javascript" src="/bower_components/nprogress/nprogress.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    {{{block "pageStyles"}}}
+  </head>
+  <body>
+    {{> header}}
+
+    <div ng-controller="ImoodController" class="container" ng-view>
+        
+    </div>
+    {{> footer}}
+
+    {{> login-modal}}
+
+    {{> scripts}}
+
+    {{{block "customScript"}}}
+  </body>
+</html>
