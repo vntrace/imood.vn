@@ -3,7 +3,7 @@ var mongoose = require('mongoose')
   , fs     = require('fs');
 
 module.exports = function(app, config) {
-	// mongoose.connect(config.mongoUri);
+	mongoose.connect(config.mongoUri);
 
 	fs.readdir(path.join(config.root, 'models'), function(err, list){
 		list.forEach(function(file){
